@@ -158,11 +158,12 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 
 
-CRONJOBS = [
-    ('*/1 * * * *', 'apps.school.tasks.send_newsletter', '>> /tmp/cron.log')  # Run every minute
-    # ('0 * * * *', 'apps.school.tasks.send_newsletter', '>> /tmp/cron.log')  # Run every hour
-]
-
+CELERY_BEAT_SCHEDULE = {
+    'send_newsletter': {
+        'task': 'apps.school.tasks.send_newsletter',
+        'schedule': timedelta(minutes=1),
+    },
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

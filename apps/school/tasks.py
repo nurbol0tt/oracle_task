@@ -1,6 +1,7 @@
 from OracleDigital.celery import app
 from django.core.mail import send_mail
 from .models import Student
+from celery import shared_task
 
 
 def send_invitation(email):
@@ -17,6 +18,7 @@ def send_message_email(email):
     send_invitation(email)
 
 
+@shared_task
 def send_newsletter():
     newsletter_subject = "Monthly Newsletter"
     newsletter_message = "Dear students, here is your monthly newsletter. Stay tuned for exciting updates and events!"
