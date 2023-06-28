@@ -1,0 +1,13 @@
+Email
+EMAIL_HOST_USER=email
+EMAIL_HOST_PASSWORD=password
+EMAIL_PORT=587
+RECIPIENT=email
+
+
+Database
+DB_NAME=name
+DB_USER=postgres
+DB_PASSWORD=password
+DB_HOST=localhost
+DB_PORT=5432
