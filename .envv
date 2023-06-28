@@ -9,5 +9,5 @@ Database
 DB_NAME=name
 DB_USER=postgres
 DB_PASSWORD=password
-DB_HOST=localhost
+DB_HOST=oracle_digital_db
 DB_PORT=5432

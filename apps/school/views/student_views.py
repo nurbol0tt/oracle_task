@@ -7,7 +7,7 @@ from rest_framework.views import APIView
 
 from apps.school.models import Student
 from apps.school.tasks import send_message_email
-from apps.school.student_serializers import (
+from apps.school.serializers.student_serializers import (
     StudentSerializer,
     StudentListSerializer,
     StudentSearch,

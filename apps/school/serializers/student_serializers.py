@@ -1,6 +1,7 @@
 import django_filters
 from django.contrib.auth.hashers import make_password
 from rest_framework import serializers
+from .class_serializers import ClassSerializer
 
 from apps.school.models import Student, Class, Teacher
 
@@ -10,13 +11,6 @@ class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
         fields = "__all__"
-
-
-class ClassSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Class
-        fields = ("id", "title")
 
 
 class StudentListSerializer(serializers.ModelSerializer):
