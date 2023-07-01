@@ -13,5 +13,7 @@ urlpatterns = [
     path("register/", auth_views.RegisterView.as_view(), name='register'),
     path("login/", auth_views.LoginView.as_view()),
     path("token/refresh/", TokenRefreshView.as_view()),
-    path("class/create/", class_views.ClassCreateView.as_view())
+    
+    path("class/create/", class_views.ClassCreateView.as_view()),
+    path("mailing/create/", class_views.MailingCreateView.as_view())
 ]

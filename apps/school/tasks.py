@@ -19,14 +19,12 @@ def send_message_email(email):
 
 
 @shared_task
-def send_newsletter():
-    newsletter_subject = "Monthly Newsletter"
-    newsletter_message = "Dear students, here is your monthly newsletter. Stay tuned for exciting updates and events!"
+def send_mailing(title, description):
     students = Student.objects.all()
     for student in students:
         send_mail(
-            newsletter_subject,
-            newsletter_message,
+            title,
+            description,
             "settings.EMAIL_HOST_USER",  # Replace with your email address or a valid sender
             [student.email],
         )
