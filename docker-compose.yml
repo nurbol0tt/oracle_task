@@ -40,16 +40,6 @@ services:
     links:
       - redis
 
-  oracle_crontab:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    command: bash -c "python /usr/src/OracleDigital/manage.py crontab add"
-    volumes:
-      - .:/usr/src/OracleDigital
-    depends_on:
-      - oracle_digital_db
-
   redis:
     container_name: redis
     image: redis:latest

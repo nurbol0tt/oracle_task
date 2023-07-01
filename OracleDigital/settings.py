@@ -158,13 +158,6 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 
 
-CELERY_BEAT_SCHEDULE = {
-    'send_newsletter': {
-        'task': 'apps.school.tasks.send_newsletter',
-        'schedule': timedelta(minutes=1),
-    },
-}
-
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
